@@ -7,16 +7,31 @@ const alunos = [
 ];
 
 function FiltraAlunosAprovados (alunos) {
-    return alunos.filter(aluno => aluno.nota >= 6)
+    const AlunosAprovados = alunos.filter(aluno => aluno.nota >= 6)
+
+    const mensagem1 = "Alunos aprovados";
+    console.log(mensagem1);
+
+    AlunosAprovados.forEach(alunos => {
+        console.log(`Nome: ${alunos.nome}, Nota: ${alunos.nota}`)
+    })
 }
 
 function FiltraAlunosReprovados (alunos) {
-    return alunos.filter(aluno => aluno.nota < 6)
+    const alunosReprovados = alunos.filter(alunos => alunos.nota < 6);
+
+    const mensagem2 = "Alunos reprovados:";
+
+    console.log(mensagem2);
+
+    alunosReprovados.forEach(alunos => {
+        console.log(`Nome: ${alunos.nome}, Nota: ${alunos.nota}`);
+    });
 }
 
-const alunosAprovados = FiltraAlunosAprovados(alunos);
+FiltraAlunosAprovados(alunos);
 
-const alunosReprovados = FiltraAlunosReprovados(alunos);
+FiltraAlunosReprovados(alunos);
 
-console.log(alunosAprovados);
-console.log(alunosReprovados);
+// const alunosAprovados = FiltraAlunosAprovados(alunos);
+// const alunosReprovados = FiltraAlunosReprovados(alunos);
